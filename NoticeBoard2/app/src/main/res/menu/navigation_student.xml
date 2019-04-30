@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_feed_student"
+        android:icon="@drawable/ic_library_books_24px"
+        android:title="@string/title_feed" />
+
+
+
+    <item
+        android:id="@+id/navigation_profile_student"
+        android:icon="@drawable/ic_person_24px"
+        android:title="@string/title_profile" />
+
+</menu>

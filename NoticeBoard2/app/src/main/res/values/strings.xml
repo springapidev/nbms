@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Notice Board</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_users">Users</string>
+    <string name="title_publish">Publish</string>
+    <string name="title_permission">Permission</string>
+    <string name="title_profile">Profile</string>
+
+
+    <string name="title_activity_login_signup">LoginSignup</string>
+    <string name="tab_text_1">POLYTECHNIC</string>
+    <string name="tab_text_2">TEACHER</string>
+    <string name="tab_text_3">STUDENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

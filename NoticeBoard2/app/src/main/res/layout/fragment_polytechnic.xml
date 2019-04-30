@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@drawable/bg"
+    android:fillViewport="true"
+    tools:context=".LoginSignup">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="39dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/poly" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView32"
+        app:layout_constraintTop_toBottomOf="@+id/imageView32"
+        app:srcCompat="@drawable/mail" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView33"
+        app:layout_constraintTop_toBottomOf="@+id/imageView33"
+        app:srcCompat="@drawable/mobile" />
+
+    <ImageView
+        android:id="@+id/imageView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView34"
+        app:srcCompat="@drawable/signup"
+        android:clickable="true"/>
+
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView37"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/hvac" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView36"
+        app:layout_constraintTop_toTopOf="@+id/imageView36"
+        app:srcCompat="@drawable/logtxt" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="37dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="Polytechnic Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/imageView32"
+        app:layout_constraintTop_toTopOf="@+id/imageView32" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="37dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/imageView33"
+        app:layout_constraintTop_toTopOf="@+id/imageView33" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="37dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="Mobile"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/imageView34"
+        app:layout_constraintTop_toTopOf="@+id/imageView34" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
+
+

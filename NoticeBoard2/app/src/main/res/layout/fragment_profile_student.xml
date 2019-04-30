@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.coderbd.noticeboard.ProfileFragmentStudent">
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="437dp"
+        android:layout_height="150dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/wp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2A9D64"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_gravity="center"
+            android:text="Profile"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#fff"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintEnd_toStartOf="@+id/textView20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pro" />
+
+        <ImageView
+            android:id="@+id/imageView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView30"
+            app:layout_constraintTop_toTopOf="@+id/imageView30"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/imageView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/logout" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="180dp"
+            android:text="Department: Computer \nDesignation: Student \nRegistration Number: \nEmail: Sourab.hasan@outlook.com \nRoll Number: Semester: \nShift: \nPassword: \nStatus: Active"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.288"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="89dp"
+            android:text="Md. Nazmul Hasan Sourab"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView27"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.368" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>
