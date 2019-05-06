@@ -42,7 +42,7 @@ public class TeacherDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_teacher);
 
         // Hide the activity toolbar
-        getSupportActionBar().hide();
+      //  getSupportActionBar().hide();
 
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);

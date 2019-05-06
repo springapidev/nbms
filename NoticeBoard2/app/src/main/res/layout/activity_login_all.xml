@@ -26,18 +26,20 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView39"
         app:srcCompat="@drawable/pass" />
 
-    <ImageView
-        android:id="@+id/imageView41"
+    <ImageButton
+        android:id="@+id/imageViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView40"
         app:srcCompat="@drawable/btnlogin" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
@@ -50,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView39" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/editTextPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -69,16 +71,17 @@
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView43"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSignUp"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/dnthv" />
 
     <ImageView
-        android:id="@+id/imageView43"
+        android:id="@+id/imageViewSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView42"
         app:layout_constraintTop_toTopOf="@+id/imageView42"

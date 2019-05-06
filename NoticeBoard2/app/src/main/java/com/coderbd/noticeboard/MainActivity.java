@@ -7,10 +7,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-
+private FirebaseAuth firebaseAuth;
     private ViewPager viewPager;
 
     NavigationView navigationView;
@@ -90,7 +94,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+/////////////////checked user is logged in
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser user=firebaseAuth.getCurrentUser();
+        if(user != null){
+            System.out.println("Already Logged In"+user.getEmail());
+            Toast.makeText(this, "Already Logged In", Toast.LENGTH_SHORT).show();
+        }else{
+            System.out.println("Not Logged In"+user.getEmail());
+            Toast.makeText(this, "Not Logged In", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

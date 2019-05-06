@@ -13,4 +13,12 @@
     <string name="tab_text_3">STUDENT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="department_prompt">Choose Department</string>
+    <string-array name="department_arrays">
+        <item>All</item>
+        <item>Cse</item>
+        <item>Mchanical</item>
+        <item>Cvil</item>
+         </string-array>
 </resources>

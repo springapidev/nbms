@@ -66,12 +66,14 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/edit" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imageView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="92dp"
+            android:background="@null"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView29"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +103,7 @@
             android:layout_marginTop="125dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="89dp"
-            android:text="Md. Nazmul Hasan Sourab"
+            android:text="Md. Rajaul Islam"
             android:textColor="#fff"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView17"

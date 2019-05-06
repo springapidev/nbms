@@ -95,8 +95,8 @@ public class LoginSignup extends AppCompatActivity {
             Toast.makeText(this, "Enter Mobile Number", Toast.LENGTH_SHORT).show();
         } else {
             String id= databaseInstitute.push().getKey();
-            Institute institute=new Institute(id, instituteName, emailID, mobileNo, "578700", "1980", "Dhaka", "Dhaka", "Dhaka", "BD");
-            databaseInstitute.child(id).setValue(institute);
+          //  Institute institute=new Institute(id, instituteName, emailID, mobileNo, "578700", "1980", "Dhaka", "Dhaka", "Dhaka", "BD");
+         //   databaseInstitute.child(id).setValue(institute);
             Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show();
         }
     }

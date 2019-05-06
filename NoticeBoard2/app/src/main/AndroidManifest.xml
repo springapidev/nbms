@@ -9,15 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherDashboard"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".StudentDashboard">
-
-        </activity>
-        <activity android:name=".LoginSignup">
-
+        <activity android:name=".NoticeActivity"></activity>
+        <activity android:name=".UserListActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".LoginAll">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,12 +20,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_login_signup"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".LoginAll"></activity>
+            android:name=".TeacherDashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".StudentDashboard" /> <!-- <activity android:name=".LoginSignup"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:label="@string/title_activity_login_signup" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"></activity> -->
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".NoticeListActivity" />
+        <activity android:name=".StudentProfileActivity" />
+        <activity android:name=".StudentNoticeListActivity" />
+        <activity android:name=".TeacherNoticeListActivity" />
+        <activity android:name=".TeacherProfileActivity" />
+        <activity android:name=".TeacherNoticeActivity" />
     </application>
 
 </manifest>
