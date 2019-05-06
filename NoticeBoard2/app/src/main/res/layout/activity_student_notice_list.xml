@@ -30,7 +30,10 @@
             android:textSize="25dp" />
 
     </android.support.design.widget.AppBarLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
     <RelativeLayout
         android:id="@+id/relativelayout"
         android:layout_width="match_parent"
@@ -53,6 +56,6 @@
 
 
     </RelativeLayout>
-
+    </ScrollView>
 
 </LinearLayout>

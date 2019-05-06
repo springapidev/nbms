@@ -13,6 +13,8 @@ import com.coderbd.noticeboard.adapter.NoticeAdapter;
 import com.coderbd.noticeboard.adapter.UserAdapter;
 import com.coderbd.noticeboard.model.Notice;
 import com.coderbd.noticeboard.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,7 @@ public class NoticeListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     NoticeAdapter adapter;
     List<Notice> noticeList;
+    List<Notice> noticeListByIns;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class NoticeListActivity extends AppCompatActivity {
 
 
         noticeList = new ArrayList<>();
+        noticeListByIns = new ArrayList<>();
 
         DatabaseReference dbUsers = FirebaseDatabase.getInstance().getReference("Notices");
 
@@ -86,8 +90,29 @@ public class NoticeListActivity extends AppCompatActivity {
                         Notice n = snapshot.getValue(Notice.class);
                         noticeList.add(n);
                     }
+                    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                    if(firebaseUser != null ){
 
-                    adapter = new NoticeAdapter(NoticeListActivity.this, noticeList);
+                        FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()) {
+                                    User user = dataSnapshot.getValue(User.class);
+                                    for(Notice notice : noticeList){
+                                        if(user.getRegiCode().equalsIgnoreCase(notice.getInstituteId())){
+                                            noticeListByIns.add(notice);
+                                        }
+                                    }
+
+                                }
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                    adapter = new NoticeAdapter(NoticeListActivity.this, noticeListByIns);
                     recyclerView.setAdapter(adapter);
 
                 }
