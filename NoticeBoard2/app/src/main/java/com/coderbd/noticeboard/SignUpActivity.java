@@ -66,11 +66,12 @@ public class SignUpActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (rInstitute.isChecked()) {
                     eInsName.setHint("Enter Institute Name");
+                    eName.setHint("Enter Institute ID");
+                    spinnerLabel.setVisibility(View.GONE);
+                    spinnerDep.setVisibility(View.GONE);
                 } else if (rTeacher.isChecked() || rStudent.isChecked()) {
                     eInsName.setHint("Enter Institute ID");
-                    ImageView nameBg = (ImageView) findViewById(R.id.imageView33);
-                    nameBg.setVisibility(View.VISIBLE);
-                    eName.setVisibility(View.VISIBLE);
+                    eName.setHint("Enter Name");
                     spinnerLabel.setVisibility(View.VISIBLE);
                     spinnerDep.setVisibility(View.VISIBLE);
                 }
@@ -99,6 +100,15 @@ public class SignUpActivity extends AppCompatActivity {
                     }
 
                 }
+                if (TextUtils.isEmpty(nameOfUser)) {
+                    if (rInstitute.isChecked()) {
+                        Toast.makeText(SignUpActivity.this, "Enter Institute ID ", Toast.LENGTH_SHORT).show();
+                    } else if (rTeacher.isChecked() || rStudent.isChecked()) {
+                        Toast.makeText(SignUpActivity.this, "Enter Name", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(SignUpActivity.this, "Enter Email Address ", Toast.LENGTH_SHORT).show();
                 }
@@ -113,9 +123,6 @@ public class SignUpActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(department)) {
                         Toast.makeText(SignUpActivity.this, "Enter Department ", Toast.LENGTH_SHORT).show();
                     }
-                    if (TextUtils.isEmpty(nameOfUser)) {
-                        Toast.makeText(SignUpActivity.this, "Enter Name ", Toast.LENGTH_SHORT).show();
-                    }
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -129,7 +136,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                                     if (rInstitute.isChecked()) {
 
-                                        User userForInstitue = new User(authID, insname, "No Photo", email, "0168600000", "100 Dhaka", "Dhaka", "Dhaka", "BD", true, new Date(), null, "1052", "1980", "admin", null, null, null, null);
+                                        User userForInstitue = new User(authID, insname, "No Photo", email, "0168600000", "100 Dhaka", "Dhaka", "Dhaka", "BD", true, new Date(), null, nameOfUser, "1980", "admin", null, null, null, null);
                                         databaseReference.child(authID).setValue(userForInstitue);
                                     } else if (rTeacher.isChecked()) {
                                         User userForTeacher = new User(authID, nameOfUser, "No Photo", email, "0178600022", "10 Dhaka", "Dhaka", "Dhaka", "BD", false, new Date(), insname, null, null, "teacher", department, null, null, "Teacher");

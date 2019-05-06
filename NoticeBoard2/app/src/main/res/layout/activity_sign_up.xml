@@ -56,7 +56,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/imageView32"
             app:layout_constraintTop_toBottomOf="@+id/imageView32"
             app:srcCompat="@drawable/poly" />
@@ -135,7 +134,6 @@
             android:ems="10"
             android:hint="Your Name"
             android:inputType="textPersonName"
-            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/imageView33"
             app:layout_constraintTop_toTopOf="@+id/imageView33" />
 
