@@ -132,4 +132,29 @@ public class User {
     public String getDesignation() {
         return designation;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                ", logoOrPhoto='" + logoOrPhoto + '\'' +
+                ", email='" + email + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", address='" + address + '\'' +
+                ", district='" + district + '\'' +
+                ", division='" + division + '\'' +
+                ", country='" + country + '\'' +
+                ", status=" + status +
+                ", createDate=" + createDate +
+                ", instituteId='" + instituteId + '\'' +
+                ", regiCode='" + regiCode + '\'' +
+                ", establishedYear='" + establishedYear + '\'' +
+                ", userType='" + userType + '\'' +
+                ", department='" + department + '\'' +
+                ", registrationID='" + registrationID + '\'' +
+                ", sessionOrYear='" + sessionOrYear + '\'' +
+                ", designation='" + designation + '\'' +
+                '}';
+    }
 }
