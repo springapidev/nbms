@@ -9,8 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
+import com.coderbd.noticeboard.adapter.NoticeAdapter;
 import com.coderbd.noticeboard.adapter.UserAdapter;
+import com.coderbd.noticeboard.model.Notice;
 import com.coderbd.noticeboard.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +28,8 @@ public class UserListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     UserAdapter adapter;
     List<User> userList;
+    List<User> userListByInstitute;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +77,7 @@ public class UserListActivity extends AppCompatActivity {
 
 
         userList = new ArrayList<>();
+        userListByInstitute = new ArrayList<>();
 
         DatabaseReference dbUsers = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -97,6 +104,32 @@ public class UserListActivity extends AppCompatActivity {
 
             }
         });
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser != null ){
+
+            FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        User user = dataSnapshot.getValue(User.class);
+                        topp:
+                        for(User u : userList){
+
+                                if (user.getRegiCode().equalsIgnoreCase(u.getInstituteId()) && !u.getUserType().equalsIgnoreCase("admin")) {
+                                    userListByInstitute.add(u);
+                                }
+
+                        }
+                        adapter = new UserAdapter(UserListActivity.this, userListByInstitute);
+                        recyclerView.setAdapter(adapter);
+                    }
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
 
     }
 }

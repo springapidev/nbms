@@ -48,7 +48,7 @@ public class NoticeListActivity extends AppCompatActivity {
                                 startActivity(intentnotice);
                                 break;
                             case R.id.navigation_user_list:
-                                Intent intent=new Intent(NoticeListActivity.this, NoticeListActivity.class);
+                                Intent intent=new Intent(NoticeListActivity.this, UserListActivity.class);
                                 startActivity(intent);
                                 break;
                             case R.id.navigation_add_notice:
@@ -78,6 +78,7 @@ public class NoticeListActivity extends AppCompatActivity {
         noticeList = new ArrayList<>();
         noticeListByIns = new ArrayList<>();
 
+
         DatabaseReference dbUsers = FirebaseDatabase.getInstance().getReference("Notices");
 
         dbUsers.addValueEventListener(new ValueEventListener() {
@@ -90,30 +91,6 @@ public class NoticeListActivity extends AppCompatActivity {
                         Notice n = snapshot.getValue(Notice.class);
                         noticeList.add(n);
                     }
-                    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                    if(firebaseUser != null ){
-
-                        FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.exists()) {
-                                    User user = dataSnapshot.getValue(User.class);
-                                    for(Notice notice : noticeList){
-                                        if(user.getRegiCode().equalsIgnoreCase(notice.getInstituteId())){
-                                            noticeListByIns.add(notice);
-                                        }
-                                    }
-
-                                }
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
-                    }
-                    adapter = new NoticeAdapter(NoticeListActivity.this, noticeListByIns);
-                    recyclerView.setAdapter(adapter);
 
                 }
 
@@ -124,6 +101,39 @@ public class NoticeListActivity extends AppCompatActivity {
 
             }
         });
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser != null ){
+
+            FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        User user = dataSnapshot.getValue(User.class);
+                        for(Notice notice : noticeList){
+                            if(user.getRegiCode().equalsIgnoreCase(notice.getInstituteId())){
+                                noticeListByIns.add(notice);
+                            }
+                        }
+
+                        adapter = new NoticeAdapter(NoticeListActivity.this, noticeListByIns);
+                        recyclerView.setAdapter(adapter);
+
+                    }
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
+
+
+
+
+
+
 
     }
 }

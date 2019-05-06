@@ -84,31 +84,6 @@ public class TeacherNoticeListActivity extends AppCompatActivity {
                         noticeList.add(n);
                     }
 
-                    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                    if(firebaseUser != null ){
-
-                        FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.exists()) {
-                                    User user = dataSnapshot.getValue(User.class);
-                                  for(Notice notice : noticeList){
-                                      if(user.getInstituteId().equalsIgnoreCase(notice.getInstituteId()) && user.getDepartment().equalsIgnoreCase(notice.getDepartment())){
-                                          noticeListByDepAndIns.add(notice);
-                                      }
-                                  }
-
-                                }
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
-                    }
-
-                    adapter = new NoticeAdapter(TeacherNoticeListActivity.this, noticeListByDepAndIns);
-                    recyclerView.setAdapter(adapter);
 
                 }
 
@@ -119,6 +94,30 @@ public class TeacherNoticeListActivity extends AppCompatActivity {
 
             }
         });
+
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser != null ){
+
+            FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        User user = dataSnapshot.getValue(User.class);
+                        for(Notice notice : noticeList){
+                            if(user.getInstituteId().equalsIgnoreCase(notice.getInstituteId()) && ( user.getDepartment().equalsIgnoreCase(notice.getDepartment()) || notice.getDepartment().equalsIgnoreCase("All"))){
+                                noticeListByDepAndIns.add(notice);
+                            }
+                        }
+                        adapter = new NoticeAdapter(TeacherNoticeListActivity.this, noticeListByDepAndIns);
+                        recyclerView.setAdapter(adapter);
+                    }
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
 
     }
 }
