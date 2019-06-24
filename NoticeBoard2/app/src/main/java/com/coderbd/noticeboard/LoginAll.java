@@ -161,7 +161,7 @@ public class LoginAll extends AppCompatActivity {
 //                                                String uid = user.getUid();
 //                                                System.out.println("User Details: " + "Name: " + name + " Email: " + email + " isActivate: " + emailVerified + " UID: " + uid);
 //                                            }
-                                            Intent intent = new Intent(LoginAll.this, MainActivity.class);
+                                            Intent intent = new Intent(LoginAll.this, LoginAll.class);
                                             startActivity(intent);
                                         }
 

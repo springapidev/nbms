@@ -5,31 +5,186 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:fillViewport="true"
     tools:context=".SignUpActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView18"
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/imageView23"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg2" />
+
+        <ImageView
+            android:id="@+id/imageView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="116dp"
-            android:text="Department"
-            android:visibility="gone"
-            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView22">
+
+            <RadioButton
+                android:id="@+id/radioInstitute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#31A676"
+                android:checked="true"
+                android:text="Institute"
+                android:textColor="#31A676"
+                android:textSize="22dp" />
+
+            <RadioButton
+                android:id="@+id/radioTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#31A676"
+                android:text="Teacher"
+                android:textColor="#31A676"
+                android:textSize="22dp" />
+
+            <RadioButton
+                android:id="@+id/radioStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#31A676"
+                android:text="Student"
+                android:textColor="#31A676"
+                android:textSize="22dp" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imageView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="165dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView21"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/field2" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="41dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Institute Id"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/imageView23"
+            app:layout_constraintTop_toTopOf="@+id/imageView23" />
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView23"
+            app:layout_constraintTop_toBottomOf="@+id/imageView23"
+            app:srcCompat="@drawable/field6" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="41dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Institute Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/imageView24"
+            app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView24"
+            app:layout_constraintTop_toBottomOf="@+id/imageView24"
+            app:srcCompat="@drawable/field5" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="41dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/imageView25"
+            app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView25"
+            app:layout_constraintTop_toBottomOf="@+id/imageView25"
+            app:srcCompat="@drawable/field3" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="41dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/imageView26"
+            app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/imageView26"
+            app:layout_constraintTop_toBottomOf="@+id/imageView26"
+            app:srcCompat="@drawable/field1" />
 
         <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="229dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="164dp"
-            android:layout_marginTop="112dp"
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginBottom="72dp"
             android:background="@null"
             android:ems="10"
             android:visibility="gone"
@@ -37,207 +192,108 @@
             android:hint="Department"
             android:inputType="textPersonName"
             android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toTopOf="@+id/editText5" />
 
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/imageView27"
+            app:layout_constraintTop_toBottomOf="@+id/imageView27"
+            app:srcCompat="@drawable/picbg" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="20dp"
+            android:text="Choose Logo"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView32"
+            app:layout_constraintStart_toStartOf="@+id/imageView28"
+            app:layout_constraintTop_toTopOf="@+id/imageView32" />
 
         <ImageView
             android:id="@+id/imageView32"
             android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="6dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+            app:layout_constraintStart_toEndOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/imageView27"
+            app:srcCompat="@drawable/uppic" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="220dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/poly" />
+            android:layout_marginBottom="8dp"
+            android:text=" I am agree with terms and conditions"
+            app:layout_constraintBottom_toTopOf="@+id/imageView33"
+            app:layout_constraintStart_toStartOf="@+id/imageView28" />
 
         <ImageView
             android:id="@+id/imageView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            app:layout_constraintStart_toStartOf="@+id/imageView32"
-            app:layout_constraintTop_toBottomOf="@+id/imageView32"
-            app:srcCompat="@drawable/poly" />
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="29dp"
+            app:layout_constraintEnd_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView28"
+            app:srcCompat="@drawable/field4" />
 
         <ImageView
-            android:id="@+id/imageView34"
+            android:id="@+id/imageView37"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            app:layout_constraintStart_toStartOf="@+id/imageView33"
+            android:layout_marginTop="7dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView28"
+            app:layout_constraintTop_toTopOf="@+id/imageView28"
+            app:srcCompat="@drawable/circle" />
+
+
+        <ImageView
+            android:id="@+id/imageViewLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView33"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView33"
-            app:srcCompat="@drawable/mail" />
-
-        <ImageView
-            android:id="@+id/imageView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            app:layout_constraintStart_toStartOf="@+id/imageView34"
-            app:layout_constraintTop_toBottomOf="@+id/imageView34"
-            app:srcCompat="@drawable/pass" />
-
-        <ImageView
-            android:id="@+id/signup"
-            android:layout_width="370dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="120dp"
-            android:clickable="true"
-            app:layout_constraintStart_toStartOf="@+id/imageView34"
-            app:layout_constraintTop_toBottomOf="@+id/imageView34"
-            app:srcCompat="@drawable/signup" />
-
-
-        <ImageView
-            android:id="@+id/imageView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="29dp"
-            android:layout_marginBottom="46dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView37"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/hvac" />
-
-        <ImageView
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView36"
-            app:layout_constraintTop_toTopOf="@+id/imageView36"
             app:srcCompat="@drawable/logtxt" />
 
-        <EditText
-            android:id="@+id/editTextInstitute"
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:layout_marginEnd="37dp"
-            android:background="@null"
-            android:ems="10"
-            android:hint="Institute Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/imageView32"
-            app:layout_constraintTop_toTopOf="@+id/imageView32" />
-
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="37dp"
-            android:background="@null"
-            android:ems="10"
-            android:hint="Institute Id"
-            android:inputType="textPersonName"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="50dp"
+            android:text="Already Have an account?"
+            android:textColor="@drawable/common_google_signin_btn_text_dark"
             app:layout_constraintEnd_toEndOf="@+id/imageView33"
-            app:layout_constraintTop_toTopOf="@+id/imageView33" />
-
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="37dp"
-            android:background="@null"
-            android:ems="10"
-            android:hint="E-mail"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/imageView34"
-            app:layout_constraintTop_toTopOf="@+id/imageView34" />
-
-        <EditText
-            android:id="@+id/editTextPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="37dp"
-            android:background="@null"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/imageView35"
-            app:layout_constraintTop_toTopOf="@+id/imageView35" />
-
-        <ImageView
-            android:id="@+id/imageView45"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="68dp"
-            app:layout_constraintBottom_toTopOf="@+id/userType"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
-        <RadioGroup
-            android:id="@+id/userType"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginBottom="518dp"
-            android:orientation='horizontal'
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView32"
-            app:layout_constraintTop_toBottomOf="@+id/imageView45">
-
-            <RadioButton
-                android:id="@+id/radioInstitute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:text="Institute"
-                android:checked="true"
-                android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/radioTeacher"
-                app:layout_constraintEnd_toStartOf="@+id/radioTeacher" />
-
-            <RadioButton
-                android:id="@+id/radioTeacher"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:text="Teacher"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView32"
-                app:layout_constraintEnd_toStartOf="@+id/radioStudent" />
-
-            <RadioButton
-                android:id="@+id/radioStudent"
-                android:layout_width="124dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="0dp"
-
-                android:text="Student"
-                android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/radioTeacher"
-                app:layout_constraintEnd_toEndOf="@+id/imageView32" />
-
-
-        </RadioGroup>
-
+            app:layout_constraintTop_toBottomOf="@+id/imageView33" />
         <ProgressBar
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="88dp"
+            android:layout_height="75dp"
+            android:layout_width="75dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView36"
-            app:layout_constraintTop_toBottomOf="@+id/signup"
-            tools:visibility="gone" />
-
+            />
 
     </android.support.constraint.ConstraintLayout>
 
+
 </ScrollView>
+
 
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.coderbd.noticeboard.model.User;
@@ -17,11 +18,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.Date;
 
 public class UserProfileActivity extends AppCompatActivity {
-private ImageButton btnSignOut;
+private ImageView btnSignOut;
 private FirebaseAuth.AuthStateListener authStateListener;
-private TextView name, details;
+private TextView insName,estYear, regiCode,userType,email,mobile,acCreateDate,address;
+
+private ImageView logo;
 
 //    @Override
 //    public void onBackPressed() {
@@ -44,7 +50,7 @@ private TextView name, details;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        btnSignOut = (ImageButton)findViewById(R.id.imageView30);
+        btnSignOut = (ImageView)findViewById(R.id.imageView43);
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,8 +59,15 @@ private TextView name, details;
                 startActivity(intent);
             }
         });
-        name=(TextView)findViewById(R.id.textView20);
-        details=(TextView)findViewById(R.id.textView17);
+        insName=(TextView)findViewById(R.id.textView);
+        regiCode=(TextView)findViewById(R.id.textView2);
+        estYear=(TextView)findViewById(R.id.textView3);
+        userType=(TextView)findViewById(R.id.textView4);
+        email=(TextView)findViewById(R.id.textView5);
+        mobile=(TextView)findViewById(R.id.textView6);
+        acCreateDate=(TextView)findViewById(R.id.textView7);
+        address=(TextView)findViewById(R.id.textView8);
+        logo=(ImageView) findViewById(R.id.imageView2);
 
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -65,14 +78,23 @@ private TextView name, details;
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
                         User user = dataSnapshot.getValue(User.class);
-                        String userType = user.getUserType();
-                        name.setText(user.getName());
-                        StringBuilder sb=new StringBuilder();
-                        sb.append("User Type: "+user.getUserType()+"\n");
-                        sb.append("Name: "+user.getName()+"\n");
-                        sb.append("Email: "+user.getEmail()+"\n");
-                        details.setText(sb.toString());
 
+                        insName.setText(user.getName().toString());
+                        String insregiCode = "Regi. Code: "+user.getRegiCode().toString();
+                        regiCode.setText(insregiCode.toString());
+                        String esYear ="Est. Year: "+user.getEstablishedYear().toString();
+                        estYear.setText(esYear.toString());
+                        userType.setText(user.getUserType().toUpperCase().toString());
+                        email.setText(user.getEmail().toString());
+                        mobile.setText(user.getMobile().toString());
+                        acCreateDate.setText(String.valueOf(user.getCreateDate().toString()));
+                        StringBuilder sb=new StringBuilder();
+                        sb.append(user.getAddress()+", ");
+                        sb.append(user.getDistrict()+"\n");
+                        sb.append(user.getDivision()+", ");
+                        sb.append(user.getCountry());
+                        address.setText(sb.toString());
+                        Picasso.with(UserProfileActivity.this).load(user.getLogoOrPhoto()).into(logo);
                     }
                 }
                 @Override
